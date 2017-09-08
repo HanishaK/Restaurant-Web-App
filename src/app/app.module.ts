@@ -14,8 +14,10 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { DishService } from './service/dish.service';
 import { PromotionService } from './service/promotion.service';
+import { LeaderService } from './service/leader.service';
 import { AppRoutingModule } from './app-routing/app-routing.module';
-
+import { LoginComponent } from './login/login.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,16 +28,21 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
     FooterComponent,
     HomeComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
     FlexLayoutModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
-  providers: [DishService, PromotionService],
+  providers: [DishService, PromotionService, LeaderService],
+  entryComponents: [
+  LoginComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
