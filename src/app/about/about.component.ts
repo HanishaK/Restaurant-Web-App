@@ -13,7 +13,7 @@ selectedLeader: Leader;
   constructor(private leaderService: LeaderService) { }
 
   ngOnInit() {
-  this.leaders = this.leaderService.getLeaders()
+  this.leaderService.getLeaders().then(leaders => this.leaders = leaders);
   }
 
   onSelect(leader: Leader){
