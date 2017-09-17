@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import {MaterialModule} from '@angular/material';
-import {FlexLayoutModule} from '@angular/flex-layout';
+import { MaterialModule } from '@angular/material';
+import { HttpModule } from '@angular/http';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import 'hammerjs';
@@ -19,6 +20,8 @@ import { PromotionService } from './service/promotion.service';
 import { LeaderService } from './service/leader.service';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { LoginComponent } from './login/login.component';
+import { baseURL } from './shared/baseurl';
+import { ProcessHTTPMessgService } from './service/process-httpmessg.service';
 
 @NgModule({
   declarations: [
@@ -39,9 +42,10 @@ import { LoginComponent } from './login/login.component';
     FlexLayoutModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpModule
   ],
-  providers: [DishService, PromotionService, LeaderService],
+  providers: [DishService, PromotionService, LeaderService, {provide: 'BaseURL', useValue: baseURL}, ProcessHTTPMessgService],
   entryComponents: [
   LoginComponent
   ],

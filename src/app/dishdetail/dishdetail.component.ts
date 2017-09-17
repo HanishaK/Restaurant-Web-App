@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { Dish } from '../shared/dish';
 import { DishService } from '../service/dish.service';
 import { Params, ActivatedRoute } from '@angular/router';
@@ -35,7 +35,7 @@ validationMessage = {
       'maxlength': 'Comment cannot be more than 50 letters'}
 };
 
-  constructor(private dishservice: DishService, private route:ActivatedRoute, private location: Location, private cf: FormBuilder) {}
+  constructor(private dishservice: DishService, private route:ActivatedRoute, private location: Location, private cf: FormBuilder, @Inject('BaseURL') private BaseURL) {}
 
   ngOnInit() {
   this.createform();
