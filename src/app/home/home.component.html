@@ -18,10 +18,14 @@
     </p>
   </md-card-content>
 </md-card>
-<div [hidden]="dish">
+<div [hidden]="dish || dishErrMessg">
   <md-spinner color="accent"></md-spinner>
   <h4>Loading...please wait</h4>
 </div>
+<div *ngIf="dishErrMessg">
+    <h2>Error</h2>
+    <h4>{{dishErrMessg}}</h4>
+  </div>
 
 <md-card *ngIf="promotion" fxFlex>
   <md-card-header>

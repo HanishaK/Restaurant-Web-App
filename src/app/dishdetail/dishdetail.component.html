@@ -71,8 +71,12 @@
     </form>
 </div>
 
-  <div [hidden]="dish">
+  <div [hidden]="dish || errMes">
        <md-spinner color="accent"></md-spinner>
        <h4>Loading...please wait</h4>
+  </div>
+  <div *ngIf="errMes">
+    <h2>Error</h2>
+    <h4>{{errMes}}</h4>
   </div>
   </div>
