@@ -43,7 +43,7 @@ import { ProcessHTTPMessgService } from './service/process-httpmessg.service';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
   ],
   providers: [DishService, PromotionService, LeaderService, {provide: 'BaseURL', useValue: baseURL}, ProcessHTTPMessgService],
   entryComponents: [
